@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/GameDealer/static/css/main.073c9b0a.css",
+    "main.js": "/GameDealer/static/js/main.e9a19173.js",
+    "static/js/787.3188e433.chunk.js": "/GameDealer/static/js/787.3188e433.chunk.js",
+    "static/media/logo.svg": "/GameDealer/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/GameDealer/index.html",
+    "main.073c9b0a.css.map": "/GameDealer/static/css/main.073c9b0a.css.map",
+    "main.e9a19173.js.map": "/GameDealer/static/js/main.e9a19173.js.map",
+    "787.3188e433.chunk.js.map": "/GameDealer/static/js/787.3188e433.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.e9a19173.js"
+  ]
+}
