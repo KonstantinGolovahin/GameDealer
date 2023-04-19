@@ -1,8 +1,8 @@
-
 import './App.css';
 import Jumbotron from "./Components/Jumbotron";
 import Footer from "./Components/Footer";
 import bg from "./Images/BG.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -26,15 +26,19 @@ function App() {
     >
       <Jumbotron />
 
-      <div className='rows'>
-        <div className='row'>Search</div>
-        <div className='row'>Display</div>
-      </div>
-
-      <div className='rows'>
-        <div className='row'>History</div>
-        <div className='row'>Deals</div>
-      </div>
+      <div className="container">
+  <div className="row">
+    <div className="col">
+      <p>Search bar</p>
+      <p>Search Results</p>
+      <p>Search History</p>
+    </div>
+    <div className="col">
+    <p>Game Description</p>
+    <p>Game Deals</p>
+    </div>
+  </div>
+  </div>
       <Footer/>
 
     </div>
