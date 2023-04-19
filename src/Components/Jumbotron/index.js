@@ -7,12 +7,9 @@ import React from "react";
 function Jumbotron() {
   return (
     
-    <div 
-    
-    >
+    <div   >
        
-      <h1><span>Your</span><span> YouTube</span></h1>
-      <h1><span>Your</span><span> Way</span></h1>
+      <h1>Jumbotron text</h1>
     </div>
   );
 }
