@@ -1,5 +1,6 @@
 import './App.css';
 import Jumbotron from "./Components/Jumbotron";
+import Searchbar from "./Components/Searchbar"
 import Footer from "./Components/Footer";
 import bg from "./Images/BG.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,8 +33,8 @@ function App() {
       <div className='titleText'>
         <h1 className="title display-2 my-5">Game Dealer</h1>
         </div>
-    
-      <p>Search bar</p>
+    <div><Searchbar/></div>
+      
       <p>Search Results</p>
       <p>Search History</p>
     </div>
