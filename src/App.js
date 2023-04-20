@@ -1,6 +1,7 @@
 import './App.css';
 import Jumbotron from "./Components/Jumbotron";
 import Searchbar from "./Components/Searchbar"
+import Playlist from "./Components/Playlist"
 import Footer from "./Components/Footer";
 import bg from "./Images/BG.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,7 +36,7 @@ function App() {
         </div>
     <div><Searchbar/></div>
       
-      <p>Search Results</p>
+     <div><Playlist /></div>
       <p>Search History</p>
     </div>
     <div className="col">

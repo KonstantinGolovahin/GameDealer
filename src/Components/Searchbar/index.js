@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi'
-
+import ListCard from '../Card_Playlist';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -15,19 +15,26 @@ import "./style.css";
 
 const apiCallString = "https://api.rawg.io/api/games?search_exact=1&exclude_additions=1,platforms=4&page_size=10&page=1&ordering=-rating&"
 const keyRAWG = "4d3c85eb44b84a48a052214685745b50";
-
+// list of games used to create a list of cards
+let playLists = []
 
 function Searchbar() {
 
 
 // manage video id from GET request
-//const [videoID, setVideo] = useState("");
+const [videoID, setVideo] = useState("");
 
 // control input value
 const [searchParam, setSearch] = useState({
   keyword: "",
 
 });
+
+
+let gameID;
+
+
+
 
 
 // submit form input event
@@ -51,8 +58,16 @@ const handleSubmit = (e) => {
     .then(function (response) {
       // handle success
     //  setVideo(response.data.items[0].id.playlistId)
-for (let i =0;i<response.length;i++) {
-  console.log(response.results[i].name)
+   // alert(response.results.count)
+   // console.log(response.results.length)
+playLists = []
+
+
+for (let i = 0; i < response.data.results.length; i++) {
+ // console.log(response.results[i])
+  playLists.push(response.data.results[i].name)
+  console.log(playLists)
+
 }
       
 
@@ -62,12 +77,18 @@ for (let i =0;i<response.length;i++) {
       console.log(error);
     })
     .finally(function () {
-      // always executed
+ 
     });
 
 }
 
 
+
+ // generate a list of playlists
+ const listItems = playLists.map((number) =>
+ <ListCard gameID={number}></ListCard>
+
+);
 
 
 
@@ -91,15 +112,18 @@ for (let i =0;i<response.length;i++) {
           <Button onClick={getUserDefinedGameList} variant="outline-secondary" className="searchButton">
             <FaSearch />
           </Button>
-          <Button >Get Trending List<GiPerspectiveDiceSixFacesRandom></GiPerspectiveDiceSixFacesRandom></Button>
+          <Button >Get Trending<GiPerspectiveDiceSixFacesRandom></GiPerspectiveDiceSixFacesRandom></Button>
         </InputGroup>
 
       </div>
       
-     
+      <div >
+        {listItems}
+       
+      </div>
     </div>
   );
-  }
+}
 
 export default Searchbar;
 
