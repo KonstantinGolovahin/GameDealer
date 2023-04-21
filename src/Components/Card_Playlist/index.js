@@ -1,16 +1,17 @@
 import React from "react";
-
+import axios from "axios";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
 import "./style.css";
 
+const keyRAWG = "4d3c85eb44b84a48a052214685745b50";
 
 function ListCard(props) {
 
   const [message, setMessage] = useState("")
 
- // gameID = props.gameID
+  const [buttonText, setButtonText] = useState('');
 
     
   
@@ -54,15 +55,52 @@ function ListCard(props) {
     }, 1000);
   }
 
-  return (
 
-    <Card className="cardPlaylist" style={{ width: '20rem'}}>
-      <Card.Body >
-       <p>{props.gameName}</p> 
-        <Button onClick={savePlaylist} variant="primary"  >Save</Button>
-        <div className="save-message">{message}</div> {/* display the state in a separate div */}
-      </Card.Body>
-    </Card>
+// display game details on click
+function displayGame (event){
+
+  //const [gameSearch, setSearch] = useState("")
+  
+/* let apiCallString = "https://api.rawg.io/api/games/" + gameID + "?"
+//
+   // search a list of games by name
+   axios.get(apiCallString, {
+    params: {
+         key: keyRAWG
+    }
+  })
+    .then(function (response) {
+      // handle success
+    //  setVideo(response.data.items[0].id.playlistId)
+       
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+ 
+    });
+ */
+   // setButtonText(event.target.innerText)
+    console.log(buttonText)
+
+}
+
+
+
+
+
+
+  return (
+ 
+  <div class="row">
+  <div class="col-8" ><Button onClick={displayGame} ><p>{props.gameName}</p></Button></div>
+  <div class="col-4"><Button onClick={savePlaylist} variant="primary"  >Save</Button></div>
+  
+</div>
+
   );
 }
 
