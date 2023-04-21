@@ -21,8 +21,8 @@ let playLists = []
 function Searchbar() {
 
 
-// manage video id from GET request
-const [videoID, setVideo] = useState("");
+// manage game name from GET request
+const [gameName, setGame] = useState("");
 
 // control input value
 const [searchParam, setSearch] = useState({
@@ -31,7 +31,7 @@ const [searchParam, setSearch] = useState({
 });
 
 
-let gameID;
+
 
 
 
@@ -61,7 +61,7 @@ const handleSubmit = (e) => {
    // alert(response.results.count)
    // console.log(response.results.length)
 playLists = []
-
+setGame(response.data.results[0].name)
 
 for (let i = 0; i < response.data.results.length; i++) {
  // console.log(response.results[i])
@@ -85,8 +85,8 @@ for (let i = 0; i < response.data.results.length; i++) {
 
 
  // generate a list of playlists
- const listItems = playLists.map((number) =>
- <ListCard gameID={number}></ListCard>
+ const listItems = playLists.map((item) =>
+ <ListCard gameName={item}></ListCard>
 
 );
 

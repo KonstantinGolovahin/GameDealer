@@ -56,9 +56,9 @@ function ListCard(props) {
 
   return (
 
-    <Card className="cardPlaylist" style={{ width: '18rem' }}>
+    <Card className="cardPlaylist" style={{ width: '20rem'}}>
       <Card.Body >
-       <p>{props.gameID}</p> 
+       <p>{props.gameName}</p> 
         <Button onClick={savePlaylist} variant="primary"  >Save</Button>
         <div className="save-message">{message}</div> {/* display the state in a separate div */}
       </Card.Body>
