@@ -13,11 +13,16 @@ function ListCard(props) {
 
   const [buttonText, setButtonText] = useState('');
 
+let userSelectedGame
+  
+
     
   
 
 
   function savePlaylist() {
+
+
 
     // new array for values from a local storage
     let taskSaved = [];
@@ -57,37 +62,12 @@ function ListCard(props) {
 
 
 // display game details on click
-function displayGame (event){
-
-  //const [gameSearch, setSearch] = useState("")
-  
-/* let apiCallString = "https://api.rawg.io/api/games/" + gameID + "?"
-//
-   // search a list of games by name
-   axios.get(apiCallString, {
-    params: {
-         key: keyRAWG
-    }
-  })
-    .then(function (response) {
-      // handle success
-    //  setVideo(response.data.items[0].id.playlistId)
-       
-
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
- 
-    });
- */
-   // setButtonText(event.target.innerText)
-    console.log(buttonText)
-
-}
-
+const displayGame = (event) => {
+  console.log(event.target.textContent);
+  setButtonText(event.target.textContent)
+  userSelectedGame=event.target.textContent;
+  console.log(userSelectedGame)
+};
 
 
 
