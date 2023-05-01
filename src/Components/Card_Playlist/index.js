@@ -2,8 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 import "./style.css";
+import GameDetails from "../Card_Game_Details";
 
 const keyRAWG = "4d3c85eb44b84a48a052214685745b50";
 
@@ -12,8 +16,8 @@ function ListCard(props) {
   const [message, setMessage] = useState("")
 
   const [buttonText, setButtonText] = useState('');
-
-let userSelectedGame
+  const [userSelectedGame, setUserSelectedGame] = useState("");
+ 
   
 
     
@@ -63,10 +67,11 @@ let userSelectedGame
 
 // display game details on click
 const displayGame = (event) => {
-  console.log(event.target.textContent);
+  //console.log(event.target.textContent);
   setButtonText(event.target.textContent)
-  userSelectedGame=event.target.textContent;
-  console.log(userSelectedGame)
+  setUserSelectedGame(event.target.textContent);
+ // console.log(userSelectedGame)
+ 
 };
 
 
@@ -74,12 +79,36 @@ const displayGame = (event) => {
 
 
   return (
- 
+   
+      
+  
+
+
+<div class="container-fluid">
   <div class="row">
-  <div class="col-8" ><Button onClick={displayGame} ><p>{props.gameName}</p></Button></div>
-  <div class="col-4"><Button onClick={savePlaylist} variant="primary"  >Save</Button></div>
+    <div class="col">
+    <div className="row">
+  <div className="col-8" ><Button onClick={displayGame} ><p>{props.gameName}</p></Button></div>
+  <div className="col-4"><Button onClick={savePlaylist} variant="primary"  >Save</Button></div>
+   </div>
+    </div>
+    <div class="col">
+    <GameDetails userSelectedGame= {userSelectedGame} ></GameDetails>
+    </div>
+  </div>
   
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
   );
 }
